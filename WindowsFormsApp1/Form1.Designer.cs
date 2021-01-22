@@ -28,105 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.newfile = new System.Windows.Forms.Button();
-            this.openfile = new System.Windows.Forms.Button();
-            this.delet = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.listWithFiles = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ССreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.Delete = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.Search = new System.Windows.Forms.ToolStripTextBox();
+            this.Menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.setting = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sorting = new System.Windows.Forms.Button();
+            this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // newfile
+            // listWithFiles
             // 
-            this.newfile.BackColor = System.Drawing.Color.GhostWhite;
-            this.newfile.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.newfile.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newfile.ForeColor = System.Drawing.Color.Black;
-            this.newfile.Location = new System.Drawing.Point(17, 15);
-            this.newfile.Margin = new System.Windows.Forms.Padding(4);
-            this.newfile.Name = "newfile";
-            this.newfile.Size = new System.Drawing.Size(86, 86);
-            this.newfile.TabIndex = 0;
-            this.newfile.Text = "+";
-            this.newfile.UseVisualStyleBackColor = false;
-            this.newfile.Click += new System.EventHandler(this.button1_Click);
+            this.listWithFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listWithFiles.ContextMenuStrip = this.contextMenuStrip1;
+            this.listWithFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listWithFiles.FormattingEnabled = true;
+            this.listWithFiles.ItemHeight = 22;
+            this.listWithFiles.Location = new System.Drawing.Point(0, 49);
+            this.listWithFiles.Margin = new System.Windows.Forms.Padding(2);
+            this.listWithFiles.Name = "listWithFiles";
+            this.listWithFiles.Size = new System.Drawing.Size(762, 422);
+            this.listWithFiles.TabIndex = 4;
+            this.listWithFiles.DoubleClick += new System.EventHandler(this.openfile_Click);
             // 
-            // openfile
+            // contextMenuStrip1
             // 
-            this.openfile.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.openfile.ForeColor = System.Drawing.Color.Black;
-            this.openfile.Location = new System.Drawing.Point(17, 459);
-            this.openfile.Name = "openfile";
-            this.openfile.Size = new System.Drawing.Size(144, 46);
-            this.openfile.TabIndex = 2;
-            this.openfile.Text = "Открыть";
-            this.openfile.UseVisualStyleBackColor = true;
-            this.openfile.Click += new System.EventHandler(this.openfile_Click);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ССreate,
+            this.Delete});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 48);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
-            // delet
+            // ССreate
             // 
-            this.delet.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delet.ForeColor = System.Drawing.Color.Black;
-            this.delet.Location = new System.Drawing.Point(165, 459);
-            this.delet.Name = "delet";
-            this.delet.Size = new System.Drawing.Size(144, 46);
-            this.delet.TabIndex = 3;
-            this.delet.Text = "Удалить";
-            this.delet.UseVisualStyleBackColor = true;
-            this.delet.Click += new System.EventHandler(this.delet_Click);
+            this.ССreate.Name = "ССreate";
+            this.ССreate.Size = new System.Drawing.Size(164, 22);
+            this.ССreate.Text = "Создать заметку";
+            this.ССreate.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listBox1
+            // Delete
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 29;
-            this.listBox1.Location = new System.Drawing.Point(17, 108);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(292, 323);
-            this.listBox1.TabIndex = 4;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(164, 22);
+            this.Delete.Text = "Удалить заметку";
+            this.Delete.Click += new System.EventHandler(this.delet_Click);
             // 
-            // button1
+            // menuStrip1
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(223, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 86);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Search,
+            this.Menu,
+            this.setting});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(762, 27);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // Search
+            // 
+            this.Search.AccessibleName = "";
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(100, 23);
+            this.Search.Text = "Поиск";
+            // 
+            // Menu
+            // 
+            this.Menu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewFile});
+            this.Menu.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Menu.ImageTransparentColor = System.Drawing.Color.White;
+            this.Menu.Name = "Menu";
+            this.Menu.Size = new System.Drawing.Size(48, 23);
+            this.Menu.Text = "Файл";
+            // 
+            // addNewFile
+            // 
+            this.addNewFile.Name = "addNewFile";
+            this.addNewFile.Size = new System.Drawing.Size(180, 22);
+            this.addNewFile.Text = "Создать заметку";
+            this.addNewFile.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // setting
+            // 
+            this.setting.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.setting.Name = "setting";
+            this.setting.Size = new System.Drawing.Size(79, 23);
+            this.setting.Text = "Настройки";
+            // 
+            // Sorting
+            // 
+            this.Sorting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Sorting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Sorting.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sorting.ForeColor = System.Drawing.Color.Black;
+            this.Sorting.Location = new System.Drawing.Point(662, 26);
+            this.Sorting.MaximumSize = new System.Drawing.Size(50, 100);
+            this.Sorting.MinimumSize = new System.Drawing.Size(100, 10);
+            this.Sorting.Name = "Sorting";
+            this.Sorting.Size = new System.Drawing.Size(100, 25);
+            this.Sorting.TabIndex = 6;
+            this.Sorting.Text = "Сортировка";
+            this.Sorting.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(325, 517);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.delet);
-            this.Controls.Add(this.openfile);
-            this.Controls.Add(this.newfile);
+            this.ClientSize = new System.Drawing.Size(762, 488);
+            this.Controls.Add(this.Sorting);
+            this.Controls.Add(this.listWithFiles);
+            this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.DarkRed;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Zametki";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Note";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button newfile;
-        private System.Windows.Forms.Button openfile;
-        private System.Windows.Forms.Button delet;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listWithFiles;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem Menu; // Тут предупреждение, я не понимаю его
+        private System.Windows.Forms.ToolStripMenuItem addNewFile;
+        private System.Windows.Forms.ToolStripMenuItem setting;
+        private System.Windows.Forms.Button Sorting;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ССreate;
+        private System.Windows.Forms.ToolStripMenuItem Delete;
+        private System.Windows.Forms.ToolStripTextBox Search;
     }
 }
-

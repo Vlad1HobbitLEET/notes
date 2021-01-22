@@ -5,91 +5,76 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-
     public partial class Form1 : Form
     {
         static public string currentTheme;
         static public string currentMessage;
-        
-        static public DataTable spisok;
+        static public string pathWithFiles = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FolderWithNotes"); //Полный путь до папки C:/Users/username/MyDocuments/FolderWithNotes/
+        public void RefreshList() //Функция обновления листа с файлами
+        {
+            DirectoryInfo dir = new DirectoryInfo(pathWithFiles);
+            FileInfo[] files = dir.GetFiles("*.txt");
+            foreach (FileInfo fi in files)
+            {
+                var stringFile = fi.ToString();
+                var fileWithoutTXT = stringFile.Remove(stringFile.Length - 4, 4);
+                listWithFiles.Items.Add(fileWithoutTXT);
+            }
+        }
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Функция создания файла
         {
-            
-            Form2 newfile = new Form2();
-            
+            Note newfile = new Note();
+            newfile.Owner = this;
             newfile.ShowDialog();
-            
         }
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            DirectoryInfo dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
-            FileInfo[] files = dir.GetFiles("*.txt");
-            foreach (FileInfo fi in files)
-            {
-                listBox1.Items.Add(fi.ToString());
-            }
+            RefreshList();
+
+            bool existingDirectory = Directory.Exists(pathWithFiles);
+            if (!existingDirectory) Directory.CreateDirectory(pathWithFiles);
         }
 
-        private void openfile_Click(object sender, EventArgs e)
+        private void openfile_Click(object sender, EventArgs e) //Функция загрузки файла
         {
-            Form2 loaded = new Form2();
+            Note loaded = new Note();
             loaded.Owner = this;
             try
             {
-                string nameOfFile = Path.GetFileNameWithoutExtension(Form2.docs + listBox1.SelectedItem.ToString());
+                string nameOfFile = Path.GetFileNameWithoutExtension(pathWithFiles + listWithFiles.SelectedItem.ToString());
                 loaded.loadFileTema = nameOfFile;
-                loaded.loadFileMessage = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), listBox1.SelectedItem.ToString()));
+                loaded.loadFileMessage = File.ReadAllText(Path.Combine(pathWithFiles, listWithFiles.SelectedItem.ToString()) + ".txt");
                 loaded.ShowDialog();
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException) //Нужно ли это теперь?
             {
                 MessageBox.Show("Выберите файл!");
             }
-            
         }
 
-        private void delet_Click(object sender, EventArgs e)
+        private void delet_Click(object sender, EventArgs e) //Кнопка удаления файла (Конт меню)
         {
             try
             {
-                string dirc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), listBox1.SelectedItem.ToString());
+                string directoryOfFile = Path.Combine(pathWithFiles, listWithFiles.SelectedItem.ToString() + ".txt");
 
-                File.Delete(dirc);
+                File.Delete(directoryOfFile);
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException) 
             {
                 MessageBox.Show("Выберите файл!");
             }
 
-            listBox1.Items.Clear();
-            DirectoryInfo dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
-            FileInfo[] files = dir.GetFiles("*.txt");
-            foreach (FileInfo fi in files)
-            {
-                listBox1.Items.Add(fi.ToString()); 
-            }
+            listWithFiles.Items.Clear();
+            RefreshList();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string currentSelected = listBox1.SelectedItem.ToString();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-            DirectoryInfo dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
-            FileInfo[] files = dir.GetFiles("*.txt");
-            foreach (FileInfo fi in files)
-            {
-                listBox1.Items.Add(fi.ToString());
-            }
-        }
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e) { } // конт меню правой мыши
     }
 }
