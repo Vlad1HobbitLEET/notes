@@ -46,17 +46,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(118, 7);
+            this.label1.Location = new System.Drawing.Point(12, -2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.Size = new System.Drawing.Size(221, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Тема:";
+            this.label1.Text = "Название заметки:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(80, 58);
+            this.label2.Location = new System.Drawing.Point(12, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 25);
             this.label2.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // themeOfMessage
             // 
-            this.themeOfMessage.Location = new System.Drawing.Point(12, 37);
+            this.themeOfMessage.Location = new System.Drawing.Point(12, 26);
             this.themeOfMessage.Name = "themeOfMessage";
             this.themeOfMessage.Size = new System.Drawing.Size(278, 20);
             this.themeOfMessage.TabIndex = 2;
@@ -72,7 +72,7 @@
             // contentOfMessage
             // 
             this.contentOfMessage.ContextMenuStrip = this.contextMenuStrip1;
-            this.contentOfMessage.Location = new System.Drawing.Point(12, 88);
+            this.contentOfMessage.Location = new System.Drawing.Point(12, 77);
             this.contentOfMessage.Multiline = true;
             this.contentOfMessage.Name = "contentOfMessage";
             this.contentOfMessage.Size = new System.Drawing.Size(278, 324);

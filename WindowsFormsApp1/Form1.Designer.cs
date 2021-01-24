@@ -171,7 +171,7 @@
         #endregion
         private System.Windows.Forms.ListBox listWithFiles;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem Menu; // Тут предупреждение, я не понимаю его
+        private new System.Windows.Forms.ToolStripMenuItem Menu; // Тут предупреждение, я не понимаю его
         private System.Windows.Forms.ToolStripMenuItem addNewFile;
         private System.Windows.Forms.ToolStripMenuItem setting;
         private System.Windows.Forms.Button Sorting;
