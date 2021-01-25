@@ -35,13 +35,16 @@
             this.ССreate = new System.Windows.Forms.ToolStripMenuItem();
             this.Delete = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Search = new System.Windows.Forms.ToolStripTextBox();
             this.Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewFile = new System.Windows.Forms.ToolStripMenuItem();
             this.setting = new System.Windows.Forms.ToolStripMenuItem();
             this.Sorting = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.поДатеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listWithFiles
@@ -86,21 +89,13 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Search,
             this.Menu,
             this.setting});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(762, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(762, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // Search
-            // 
-            this.Search.AccessibleName = "";
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(100, 23);
-            this.Search.Text = "Поиск";
             // 
             // Menu
             // 
@@ -110,13 +105,13 @@
             this.Menu.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Menu.ImageTransparentColor = System.Drawing.Color.White;
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(48, 23);
+            this.Menu.Size = new System.Drawing.Size(48, 20);
             this.Menu.Text = "Файл";
             // 
             // addNewFile
             // 
             this.addNewFile.Name = "addNewFile";
-            this.addNewFile.Size = new System.Drawing.Size(180, 22);
+            this.addNewFile.Size = new System.Drawing.Size(163, 22);
             this.addNewFile.Text = "Создать заметку";
             this.addNewFile.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -124,7 +119,7 @@
             // 
             this.setting.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.setting.Name = "setting";
-            this.setting.Size = new System.Drawing.Size(79, 23);
+            this.setting.Size = new System.Drawing.Size(79, 20);
             this.setting.Text = "Настройки";
             // 
             // Sorting
@@ -133,7 +128,7 @@
             this.Sorting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Sorting.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Sorting.ForeColor = System.Drawing.Color.Black;
-            this.Sorting.Location = new System.Drawing.Point(662, 26);
+            this.Sorting.Location = new System.Drawing.Point(662, 24);
             this.Sorting.MaximumSize = new System.Drawing.Size(50, 100);
             this.Sorting.MinimumSize = new System.Drawing.Size(100, 10);
             this.Sorting.Name = "Sorting";
@@ -141,6 +136,27 @@
             this.Sorting.TabIndex = 6;
             this.Sorting.Text = "Сортировка";
             this.Sorting.UseVisualStyleBackColor = true;
+            this.Sorting.Click += new System.EventHandler(this.Sort);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.поДатеToolStripMenuItem,
+            this.поToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 70);
+            // 
+            // поДатеToolStripMenuItem
+            // 
+            this.поДатеToolStripMenuItem.Name = "поДатеToolStripMenuItem";
+            this.поДатеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поДатеToolStripMenuItem.Text = "По дате";
+            // 
+            // поToolStripMenuItem
+            // 
+            this.поToolStripMenuItem.Name = "поToolStripMenuItem";
+            this.поToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поToolStripMenuItem.Text = "По имени";
             // 
             // Form1
             // 
@@ -163,6 +179,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,6 +195,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ССreate;
         private System.Windows.Forms.ToolStripMenuItem Delete;
-        private System.Windows.Forms.ToolStripTextBox Search;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem поДатеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поToolStripMenuItem;
     }
 }

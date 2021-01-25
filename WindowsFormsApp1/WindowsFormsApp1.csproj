@@ -123,5 +123,8 @@
   <ItemGroup>
     <None Include="Resources\луна.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%24this.Icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
